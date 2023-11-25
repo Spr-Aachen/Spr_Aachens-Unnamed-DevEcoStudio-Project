@@ -1,0 +1,17 @@
+<div class="container_main">
+    <text class="title">Plz rate.</text>
+        <div style="width: 100%; height: 9%;align-items: center;justify-content: center;flex-direction: column;">
+            <rating numstars="{{stars}}" rating="{{rate}}" stepsize="{{step}}" onchange="showrating" class="myrating" style="width: {{ratewidth}};height:{{rateheight}};rtl-flip: true;"></rating>
+        </div>
+        <div style="flex-direction: column; width: 75%; height: 30%; align-items: center;">
+            <div style="width: 100%; height: 30%; flex-direction: column;align-items: center; justify-content: space-around;">
+                <text>NumStars:  {{stars}}</text>
+                <slider id="sli1" min="-1" max="10" value="5" step="1" onchange="setnumstars"></slider>
+            </div>
+            <div style="width: 100%; height: 30%; flex-direction: column;align-items: center;justify-content: space-around;">
+                <text>Rating:  {{rate}}</text>
+                <slider id="sli2" min="-1" max="10" value="0" step="1" onchange="setrating"></slider>
+            </div>
+        </div>
+    <button type="capsule" value="Previous page" class="button" onclick="launch_back"></button>
+</div>

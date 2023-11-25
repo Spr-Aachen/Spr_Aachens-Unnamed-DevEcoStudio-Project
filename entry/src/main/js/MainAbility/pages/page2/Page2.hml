@@ -1,0 +1,68 @@
+<div class="container_main">
+    <text class="title">Guidance</text>
+    <stepper index="0">
+        <stepper-item label="{{label_1}}">
+            <div style="flex-direction: column; align-items: center; width: 100%; height: 90%; padding: 0px;">
+                <div style="flex-direction: column; align-items: center; width: 100%; height: 100%; padding: 0px;">
+                    <swiper autoplay="true" interval="2100" duration="600" onchange="change">
+                        <!--
+                       <div class="item" style="background-color: bisque;">
+                           <text>Step1</text>
+                       </div>
+                       <div class="item" style="background-color: darkkhaki;">
+                           <text>Step2</text>
+                       </div>
+                       <div class="item" style="background-color: cadetblue;">
+                           <text>Step3</text>
+                       </div>
+                        -->
+                        <div class="item" for="item in list">
+                            <image src="{{item.src}}"></image>
+                        </div>
+                    </swiper>
+                    <text style="color: black; height: 90px;">Preview</text>
+                </div>
+                <button type="capsule" value="Quit guidance" class="button" onclick="launch_back"></button>
+            </div>
+        </stepper-item>
+            <stepper-item label="{{label_2}}">
+                <div style="flex-direction: column; align-items: center; width: 100%; height: 90%; padding: 0px;">
+                    <div style="flex-direction: column; align-items: center; width: 100%; height: 60%; padding: 0px;">
+                        <label target="Input_1">Param_LineEdit_Text</label>
+                        <input id="Input_1" type="text" placeholder="Enter content"></input>
+                    </div>
+                    <divider style="margin-top: 30px; margin-bottom: 30px; margin-left: 80px; margin-right: 80px; color: #6495ED; stroke-width: 6px;"></divider>
+                    <div style="flex-direction: column; align-items: center; width: 100%; height: 60%; padding: 0px;">
+                        <label target="ComboBox_1">Param_ComboBox_Bool</label>
+                        <picker id="ComboBox_1" type="text" value="{{Bool}}" range="{{BoolRange}}" selected="1" onchange="SetBool"></picker>
+                    </div>
+                    <divider style="margin-top: 30px; margin-bottom: 30px; margin-left: 80px; margin-right: 80px; color: #6495ED; stroke-width: 6px;"></divider>
+                    <div style="flex-direction: column; align-items: center; width: 100%; height: 60%; padding: 0px;">
+                        <label target="CheckBox_1">Param_CheckBox_Bool</label>
+                        <input id="CheckBox_1" type="checkbox" style="width: 60%; height: 60%;" onchange="BtnClicked"></input>
+                    </div>
+                    <div style="flex-direction: column; align-items: center; width: 100%; height: 60%; padding: 0px;">
+                        <label target="CheckBox_2">Param_CheckBox_Bool</label>
+                        <switch id="CheckBox_2" style="width: 90%; height: 90%;"  showtext="true" texton="on" textoff="off" checked="true" @change="switchChange"></switch>
+                    </div>
+                </div>
+            </stepper-item>
+        <stepper-item label="{{label_3}}">
+            <div style="flex-direction: column; align-items: center; width: 100%; height: 90%; padding: 0px;">
+                <div class="bar-block" style="margin-left: 30px;">
+                    <chart class="chart-data" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}">
+                    </chart>
+                </div>
+                <div class="out-container">
+                    <button type="capsule" value="Confirmed" class="button" onclick="launch_push"></button>
+                </div>
+            </div>
+        </stepper-item>
+    </stepper>
+    <!--
+    <div class="container_row">
+        <button type="capsule" value="Go to the first page" class="button" onclick="launch_back"></button>
+        <button type="capsule" value="Go to the third page" class="button" onclick="launch_push"></button>
+    </div>
+    -->
+</div>
